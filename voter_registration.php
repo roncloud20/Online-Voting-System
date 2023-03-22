@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+
 <?php
     // Including the All Pages Header
     $title = "Register to become a voter";
@@ -9,8 +13,11 @@
 
 <!-- HTML form for user registration -->
 <form method="POST">
-  <label for="name">Name:</label>
-  <input type="text" name="name" required><br><br>
+  <label for="name">First Name:</label>
+  <input type="text" name="first_name" required><br><br>
+
+  <label for="name">Last Name:</label>
+  <input type="text" name="last_name" required><br><br>
 
   <label for="email">Email:</label>
   <input type="email" name="email" required><br><br>
@@ -57,7 +64,7 @@
         }
 
         // Inserting the user data into the database
-        $query = "INSERT INTO voter (name, email, password, date_of_birth, login_type, is_verified) VALUES ('$name', '$email', '$hashed_password', '$dob', 'voter', true)";
+        $query = "INSERT INTO voter (first_name, last_name, email, password, date_of_birth, login_type, is_verified) VALUES ('$first_name', '$first_name', '$email', '$hashed_password', '$dob', 'voter', true)";
 
         // check if the query was successful
         if (mysqli_query($conn, $query)) {

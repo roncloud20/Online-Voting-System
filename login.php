@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="assets/style.css">
+
+
+
 <?php
     //Adding the header file
     $title = "User Login";
