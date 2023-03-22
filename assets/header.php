@@ -22,9 +22,17 @@
         <h1>Logo</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="result.php">Election Result</a></li>
-                <li><a href="voter_registration.php">Sign In/Up</a></li>
+                <?php if(isset($_SESSION["login_type"]) && $_SESSION["login_type"] == "voter") { ?>
+                    <li><a href="voting.php">Voting</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php } else if(isset($_SESSION["login_type"]) && $_SESSION["login_type"] == "admin") { ?>
+                    <li><a href="register_candidate.php">Register Candidate</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php } else if(!isset($_SESSION["login_type"])) { ?>
+                    <li><a href="voter_registration.php">Sign In/Up</a></li>
+                <?php } ?>
             </ul>
         </nav>
     </header>
