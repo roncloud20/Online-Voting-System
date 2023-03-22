@@ -28,9 +28,9 @@
     ?>
 
 <!-- HTML landing page -->
-<!-- <h1>Welcome, <?php echo $voter['login_type'] . $voter['name']; ?>!</h1> -->
-<!-- <p>Your email address is: <?php// echo $voter['email']; ?></p> -->
-<!-- <p><a href="logout.php">Log out</a></p> -->
+    <h1>Welcome, <?php echo $voter['login_type'] . $voter['name']; ?>!</h1>
+      <p>Your email address is: <?php// echo $voter['email']; ?></p>
+      <p><a href="logout.php">Log out</a></p>
 
 
 
