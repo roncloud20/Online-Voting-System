@@ -1,3 +1,7 @@
+
+<link rel="stylesheet" href="assets/style.css">
+<img src="assets/logo.png" alt="">
+
 <?php
     // Including the All Pagconnectiones Header
     $title = "Online Voting System";
