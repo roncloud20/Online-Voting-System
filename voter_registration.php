@@ -1,6 +1,6 @@
 <?php
     // Including the All Pages Header
-    $title = "Online Voting System";
+    $title = "Register to become a voter";
     require_once("assets/header.php");
 
     // including the database connect file
@@ -25,6 +25,7 @@
   <input type="date" name="dob" required><br><br>
 
   <input type="submit" name="submit" value="Register">
+  <p>Already have an account? click <a href="login.php">Login</a> to login
 </form>
 
 <?php
