@@ -6,33 +6,65 @@
     // including the database connect file
     require_once("assets/db_connect.php");
 ?>
+<style>
+input[type=text], select, input[type=email], input[type=password], input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+section {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 50%;
+}
+</style>
 <!-- HTML form for user registration -->
-<form method="POST">
-  <label for="name">Name:</label>
-  <input type="text" name="name" required><br><br>
+<center>
+    <section align="center">
+        <h1><?php echo $title; ?></h1>
+        <form method="POST">
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="surname" placeholder="Surname" required><br><br>
 
-  <label for="email">Email:</label>
-  <input type="email" name="email" required><br><br>
+            <input type="email" name="email" placeholder="E-Mail Address" required><br><br>
 
-  <label for="password">Password:</label>
-  <input type="password" name="password" required><br><br>
-  
-  <label for="confirm_password">Confirm Password:</label>
-  <input type="password" name="confirm_password" required><br><br>
+            <input type="password" name="password" placeholder="Password" required><br><br>
 
-  <label for="dob">Date of Birth:</label>
-  <input type="date" name="dob" required><br><br>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+            <label for="dob">
+            <input type="date" name="dob" required><br><br>
 
-  <input type="submit" name="submit" value="Register">
-  <p>Already have an account? click <a href="login.php">Login</a> to login
-</form>
-
+            <input type="submit" name="submit" value="Register">
+        <p>Already have an account? click <a href="login.php">Login</a> to login
+        </form>
+    </section>
+</center>
 <?php
     // Checking if the form has been submitted
     if (isset($_POST['submit'])) {
         // Sanitizing and validating input data
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $name = mysqli_real_escape_string($conn, $_POST['firstname'] . " " . $_POST['surname']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
         $confirm_password = mysqli_real_escape_string($conn, $_POST['confirm_password']);

@@ -25,8 +25,8 @@ CREATE TABLE Voter (
 CREATE TABLE Candidate (
   candidate_id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
-  party VARCHAR(255),
-  description TEXT,
+  party VARCHAR(255) NOT NULL,
+  position VARCHAR(255) NOT NULL,
   PRIMARY KEY (candidate_id)
 );
 
