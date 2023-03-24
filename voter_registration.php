@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="assets/style.css">
+
+
+
 <?php
     // Including the All Pages Header
     $title = "Register to become a voter";
@@ -17,6 +21,7 @@ input[type=text], select, input[type=email], input[type=password], input[type=da
     box-sizing: border-box;
 }
 
+
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -31,6 +36,15 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
+=======
+<!-- HTML form for user registration -->
+<form method="POST">
+  <label for="name">First Name:</label>
+  <input type="text" name="first_name" required><br><br>
+
+  <label for="name">Last Name:</label>
+  <input type="text" name="last_name" required><br><br>
+
 
 section {
     border-radius: 5px;
@@ -89,7 +103,7 @@ section {
         }
 
         // Inserting the user data into the database
-        $query = "INSERT INTO voter (name, email, password, date_of_birth, login_type, is_verified) VALUES ('$name', '$email', '$hashed_password', '$dob', 'voter', true)";
+        $query = "INSERT INTO voter (first_name, last_name, email, password, date_of_birth, login_type, is_verified) VALUES ('$first_name', '$first_name', '$email', '$hashed_password', '$dob', 'voter', true)";
 
         // check if the query was successful
         if (mysqli_query($conn, $query)) {
